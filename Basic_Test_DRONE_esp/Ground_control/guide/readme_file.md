@@ -1,88 +1,70 @@
+# 🚀 Drone Ground Control (ESP32 + RF24)
 
-🛠️ Hardware Setup
-Board: ESP32 (since you’re using <WiFi.h> and WebServer.h).
+This project implements a **Wi-Fi based ground control station** using an ESP32 and an **nRF24L01 radio module**.  
+It hosts a web interface where you can control **Throttle, Roll, Pitch, Yaw, and Arming** in real time, and transmits these commands via RF24 to the drone.
 
-RF Module: nRF24L01 connected to pins:
+---
 
-CE → GPIO4
+## 📦 Hardware Requirements
+- ESP32 development board
+- nRF24L01 RF module (with capacitor across VCC–GND for stability)
+- Drone flight controller or microcontroller with RF24 receiver
+- Power supply for motors/ESCs (separate from ESP32)
 
-CSN → GPIO5
+---
 
-MOSI/MISO/SCK → SPI pins of ESP32.
+## 🔌 Wiring
+ESP32 → nRF24L01
+- CE → GPIO4  
+- CSN → GPIO5  
+- MOSI → GPIO23 (default SPI)  
+- MISO → GPIO19 (default SPI)  
+- SCK → GPIO18 (default SPI)  
+- VCC → 3.3V (stable supply)  
+- GND → GND  
 
-Power: nRF24L01 needs a stable 3.3V supply (sometimes with a capacitor across VCC–GND for stability).
+---
 
+## 🛠️ Software Setup
+1. Install **Arduino IDE** and ESP32 board support:
+   - Board Manager URL: `https://dl.espressif.com/dl/package_esp32_index.json`
+2. Install required libraries:
+   - `RF24`
+   - `WiFi` (comes with ESP32 core)
+   - `WebServer` (comes with ESP32 core)
+3. Upload the provided code to your ESP32.
 
-💻 Software Preparation
-Arduino IDE:
+---
 
-Install ESP32 board support (via Board Manager URL: https://dl.espressif.com/dl/package_esp32_index.json).
+## 🌐 Wi-Fi Access Point
+- ESP32 creates a Wi-Fi AP:
+  - SSID: `DroneGround`
+  - Password: `drone1234`
+- Connect your phone/laptop to this AP.
+- Open browser → go to `192.168.4.1`.
 
-Select your ESP32 board under Tools → Board.
+---
 
-Libraries:
+## 🎮 Web Controller
+The ESP32 serves a **web interface** with sliders and buttons:
 
-Install RF24 library.
+- **Throttle**: 0–1000  
+- **Roll**: -500 to +500  
+- **Pitch**: -500 to +500  
+- **Yaw**: -500 to +500  
+- **Arm/Disarm** buttons  
 
-Ensure WiFi and WebServer are available (they come with ESP32 core).
+Commands are sent every **50 ms (20 Hz)** to the ESP32, which transmits them via RF24.
 
-Upload Code:
+---
 
-Paste your code into Arduino IDE.
-
-Upload to ESP32.
-
-📡 Wi‑Fi Access Point
-Your ESP32 will create a Wi‑Fi AP:
-
-SSID: DroneGround
-
-Password: drone1234
-
-Connect your phone/laptop to this Wi‑Fi network.
-
-Open browser → go to 192.168.4.1 (default ESP32 AP IP).
-
-You’ll see the Drone Controller webpage with sliders and buttons.
-
-🎮 Web Controller in Action
-Throttle, Roll, Pitch, Yaw sliders: Move them to send values.
-
-Arm/Disarm buttons: Toggle arming state.
-
-The webpage sends commands every 50 ms (20 Hz) to /cmd.
-
-ESP32 parses values, packs them into Ctrl struct, and transmits via RF24.
-
-📡 RF24 Transmission
-ESP32 sends the struct {throttle, roll, pitch, yaw, arming} to the drone’s RF24 receiver.
-
-On the drone side, you need another ESP32/Arduino with RF24 configured as a receiver:
-
-cpp
-radio.openReadingPipe(1, pipeAddr);
-radio.startListening();
-if (radio.available()) {
-    Ctrl ctrl;
-    radio.read(&ctrl, sizeof(ctrl));
-    // Use ctrl.throttle, ctrl.roll, etc. to drive motors
-}
-🔍 Real‑Time Testing Flow
-Power up ESP32 (Ground Control).
-
-Connect to Wi‑Fi AP (DroneGround).
-
-Open 192.168.4.1 in browser.
-
-Move sliders → watch Serial Monitor for debug prints.
-
-Verify RF24 receiver gets the struct.
-
-Map values to motor ESCs (PWM outputs) on the drone.
-
-⚠️ Safety Notes
-Test first with Serial Monitor only (no motors connected).
-
-Once values are confirmed, connect ESCs/motors carefully.
-
-Secure the drone before arming — it may spin up quickly.
+## 📡 RF24 Transmission
+- Data is packed into a `Ctrl` struct:
+  ```cpp
+  struct Ctrl {
+    uint16_t throttle;
+    int16_t  roll;
+    int16_t  pitch;
+    int16_t  yaw;
+    uint8_t  arming;
+  } __attribute__((packed));
