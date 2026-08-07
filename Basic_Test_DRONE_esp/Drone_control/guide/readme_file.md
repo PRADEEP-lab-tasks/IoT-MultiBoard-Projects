@@ -1,75 +1,67 @@
+# 🛠️ Step‑by‑Step Guide
 
-🛠️ Step‑by‑Step Guide
-Hardware Setup
+## 🔧 Hardware Setup
+- ESP32 development board
+- nRF24L01 RF module (with capacitor across VCC–GND for stability)
+- Connect ESP32 via USB to your computer
+- If controlling motors/ESCs for a drone, wire them to the correct GPIO pins (with external power supply for motors)
 
-ESP8266 board (NodeMCU or similar).
+### Wiring (ESP32 → nRF24L01)
+- CE → GPIO4  
+- CSN → GPIO5  
+- MOSI → GPIO23 (default SPI)  
+- MISO → GPIO19 (default SPI)  
+- SCK → GPIO18 (default SPI)  
+- VCC → 3.3V (stable supply)  
+- GND → GND  
 
-Connect it via USB to your computer.
+---
 
-If you’re controlling motors/ESCs for a drone, make sure they’re wired to the correct GPIO pins (with external power supply for motors).
+## 💻 Install Arduino IDE
+- Download and install [Arduino IDE](https://www.arduino.cc/en/software).
+- In **Preferences**, add ESP32 board manager URL:  
 
-Install Arduino IDE
 
-Download and install Arduino IDE.
 
-In Preferences, add the ESP8266 board manager URL:
-http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Then go to Tools → Board → Boards Manager and install ESP8266.
 
-Add Libraries
 
-In Arduino IDE, go to Sketch → Include Library → Manage Libraries.
+--------------------------------------------------
+SOFTWARE SETUP
 
-Install Blynk library.
 
-Ensure ESP8266WiFi is available (it usually comes with the ESP8266 package).
+- Go to **Tools → Board → Boards Manager** and install **ESP32**.
 
-Configure Your Code
+---
 
-Replace auth[] with your Blynk project’s Auth Token (from the Blynk app).
+## 📚 Add Libraries
+- In Arduino IDE, go to **Sketch → Include Library → Manage Libraries**.
+- Install **RF24** library.
+- Ensure **WiFi** and **WebServer** are available (they come with ESP32 core).
 
-Replace ssid[] and pass[] with your WiFi credentials.
+---
 
-Upload the code to your ESP8266.
+## ⚙️ Configure Your Code
+- Upload the provided code to your ESP32.
+- The ESP32 will create a Wi‑Fi Access Point:
+- SSID: `DroneGround`
+- Password: `drone1234`
 
-Set Up Blynk App
+---
 
-Install Blynk IoT app (Android/iOS).
+## 🌐 Set Up Web Controller
+- Connect your phone/laptop to the `DroneGround` Wi‑Fi network.
+- Open browser → go to `192.168.4.1`.
+- You’ll see the **Drone Controller webpage** with sliders and buttons:
+- Throttle (0–1000)
+- Roll (−500 to +500)
+- Pitch (−500 to +500)
+- Yaw (−500 to +500)
+- Arm / Disarm buttons
 
-Create a new project named “Drone”.
+---
 
-Add Sliders/Joysticks linked to Virtual Pins:
-
-V1 → Roll
-
-V2 → Pitch
-
-V3 → Yaw
-
-V4 → Speed
-
-Each widget sends values to your ESP8266 in real time.
-
-Run and Monitor
-
-Open Serial Monitor in Arduino IDE (baud rate 115200).
-
-Move sliders/joysticks in the Blynk app.
-
-You’ll see live values printed:
-
-Code
-Roll: 20
-Pitch: 15
-Yaw: -10
-Speed: 12
-These values can then be mapped to motor outputs for drone control.
-
-Next Step: Motor Control
-
-Right now, your code only prints values.
-
-To make the drone move, you’ll need to send PWM signals to ESCs/motors based on roll, pitch, yaw, and speed.
-
-Example: use analogWrite(pin, value) on motor pins, where value is calculated from joystick inputs.
+## 📡 Run and Monitor
+- Open **Serial Monitor** in Arduino IDE (baud rate 115200).
+- Move sliders/joysticks in the web app.
+- You’ll see live values printed:
