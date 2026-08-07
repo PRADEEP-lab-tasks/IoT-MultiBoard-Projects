@@ -12,6 +12,7 @@ MOSI/MISO/SCK → SPI pins of ESP32.
 
 Power: nRF24L01 needs a stable 3.3V supply (sometimes with a capacitor across VCC–GND for stability).
 
+
 💻 Software Preparation
 Arduino IDE:
 
