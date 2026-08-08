@@ -9,6 +9,7 @@
 #include <BlynkSimpleEsp8266.h>
 
 
+
 char auth[] = "AS_jAbrqnxmtrB5oGYL4t0kDLosPGpVU";
 char ssid[] = "ssid";
 char pass[] = "password";
