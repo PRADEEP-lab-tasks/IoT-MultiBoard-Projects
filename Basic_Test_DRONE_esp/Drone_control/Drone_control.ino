@@ -9,8 +9,8 @@
 
 
 char auth[] = "AS_jAbrqnxmtrB5oGYL4t0kDLosPGpVU";
-char ssid[] = "Raseee";
-char pass[] = "88888888";
+char ssid[] = "ssid";
+char pass[] = "password";
 
 int speedValue = 10; // Speed variable
 
