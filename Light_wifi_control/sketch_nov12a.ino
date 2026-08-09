@@ -1,3 +1,5 @@
+// created by pradeep its a relay 
+
 #define BLYNK_TEMPLATE_ID "TMPL3pimTr7ce"
 #define BLYNK_TEMPLATE_NAME "home automation"
 #define BLYNK_AUTH_TOKEN "NazZz9TvcwxmzV36mIN3cMDu1hayalmQ"
@@ -5,7 +7,7 @@
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
-char ssid[] = "GOVIND";
+char ssid[] = "REC";
 char pass[] = "12341234";
 
 #define RELAY_PIN 5   // GPIO5 (D1 on NodeMCU)
