@@ -1,4 +1,4 @@
-// created by pradeep its a relay 
+// created by pradeep its a relay control using blynk iot app
 
 #define BLYNK_TEMPLATE_ID "TMPL3pimTr7ce"
 #define BLYNK_TEMPLATE_NAME "home automation"
