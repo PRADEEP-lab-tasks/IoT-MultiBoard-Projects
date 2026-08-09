@@ -1,3 +1,5 @@
+// created by pradeep its a dry/wet waste segregation using arduino
+
 #include <Servo.h>
 
 Servo servo1;
