@@ -39,3 +39,21 @@ It integrates **camera streaming**, **Wi-Fi control**, and **basic stabilization
   ```cpp
   angleX = 0.98 * (angleX + mpu.getGyroX() * dt) + 0.02 * mpu.getAccX();
   angleY = 0.98 * (angleY + mpu.getGyroY() * dt) + 0.02 * mpu.getAccY();
+
+
+  | Component | Pin |
+| --- | --- |
+| Motor 1 ESC | GPIO12 |
+| Motor 2 ESC | GPIO13 |
+| Motor 3 ESC | GPIO14 |
+| Motor 4 ESC | GPIO15 |
+| MPU6050 SDA | GPIO26 |
+| MPU6050 SCL | GPIO27 |
+| Camera pins | Default AI Thinker config |
+
+
+| Component | Pin |
+| --- | --- |
+| ESC Signal | D9 |
+| MPU6050 SDA | A4 |
+| MPU6050 SCL | A5 |
