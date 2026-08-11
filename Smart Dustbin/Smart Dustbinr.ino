@@ -1,5 +1,5 @@
 //Smart Dustbin using Arduino Code
-//More info: https://circuitdigest.com/microcontroller-projects/how-to-make-smart-dustbin-using-arduino
+
 #include <Servo.h>   //servo library
 Servo servo;    
 int trigPin = 5;   
