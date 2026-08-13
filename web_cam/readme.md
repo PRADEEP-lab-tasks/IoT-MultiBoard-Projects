@@ -51,8 +51,8 @@ Connect ESP32‑CAM to FTDI programmer:
 The ESP32‑CAM will connect to Wi‑Fi using:
 
 ```cpp
-const char* ssid = "REC";
-const char* password = "88888888";
+const char* ssid = "R****";
+const char* password = "888*****";
 ```
 
 Open Serial Monitor at **115200 baud**. You’ll see:
