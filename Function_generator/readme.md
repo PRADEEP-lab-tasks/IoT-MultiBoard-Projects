@@ -1,7 +1,3 @@
-Here’s a **ready‑to‑paste README.md** for your ESP32 DAC‑based Function Generator project:
-
----
-
 # ⚡ ESP32 Function Generator (DAC‑based)
 
 This project turns an **ESP32** into a simple function generator using its built‑in DAC (Digital‑to‑Analog Converter). It can output **sine, triangle, sawtooth, and square waves** on GPIO25 (DAC1).
@@ -78,6 +74,3 @@ Open‑source project for learning and experimentation. Use freely for education
 
 ---
 
-✅ You can paste this directly as `README.md` in your **Function_generator** folder on GitHub.  
-
-Would you like me to also add a **usage demo section with example oscilloscope screenshots** (described textually, since I can’t generate actual scope captures)? That would make the README more illustrative.
