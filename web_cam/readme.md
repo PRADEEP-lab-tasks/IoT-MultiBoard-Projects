@@ -1,6 +1,3 @@
-Here’s a **paste‑ready README file** you can drop straight into your project folder. It covers setup, usage, and troubleshooting for your ESP32‑CAM MJPEG streaming server.
-
----
 
 # 📷 ESP32‑CAM MJPEG Streaming Server
 
