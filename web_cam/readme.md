@@ -99,9 +99,3 @@ ESP32-CAM IP address: 192.168.x.x
   ```html
   <img src="http://<ESP32-CAM-IP>/stream">
   ```
-
----
-
-✅ Paste this into your repo as `README.md` and you’ll have a complete guide.  
-
-Would you like me to also add a **step‑by‑step troubleshooting checklist** (like a quick diagnostic flowchart) so you can pinpoint issues faster when the ESP32‑CAM doesn’t boot or stream?
