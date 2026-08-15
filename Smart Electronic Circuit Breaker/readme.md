@@ -1,7 +1,6 @@
 #Simplified Smart Electronic Circuit Breaker (SECB)
 
 
-
   Simplified Smart Electronic Circuit Breaker (SECB)
   Single-MCU version: the ESP32 does both fault detection and control.
   No comparator/latch/AND-gate hardware - just current sensing, a MOSFET
