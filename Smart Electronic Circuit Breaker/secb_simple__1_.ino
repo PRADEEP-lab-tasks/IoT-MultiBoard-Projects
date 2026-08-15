@@ -1,4 +1,4 @@
-
+Created by Pradeep with the help of AI
 
 // ---------- User-adjustable settings ----------
 const float ACS712_SENS_V_PER_A  = 0.185;  // 5A module = 0.185 V/A, 20A module = 0.100 V/A
