@@ -12,6 +12,7 @@ This project allows you to view live waveforms from an analog input pin directly
   - **Voltage Scale** (volts/div, display only).
   - **Trigger Level** (visual line + rising-edge trigger).
   - **Pause/Resume** waveform capture.
+  
 - Real-time statistics:
   - Vpp, Vmax, Vmin, Vavg, Vrms
   - Amplitude, Frequency, Period
