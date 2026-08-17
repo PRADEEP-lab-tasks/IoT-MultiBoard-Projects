@@ -1,7 +1,5 @@
 //created by pradeep
 
-
-
 #include "driver/dac.h"
 #include "driver/timer.h"
 
