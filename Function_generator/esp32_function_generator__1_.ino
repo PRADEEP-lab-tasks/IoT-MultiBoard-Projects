@@ -1,22 +1,6 @@
 //created by pradeep
 
-/*
-  ESP32 Function Generator (DAC-based)
-  -------------------------------------
-  Generates Sine / Triangle / Sawtooth / Square waves on GPIO25 (DAC1).
-  Output range: 0 - 3.3V (8-bit DAC, 0-255).
 
-  Good for testing your ESP32 CRO project - connect DAC output (GPIO25)
-  through a small series resistor to the ADC input (GPIO34) of the
-  oscilloscope ESP32, or straight to a real scope.
-
-  Control via Serial Monitor commands:
-    s <freq>   -> sine wave, e.g. "s 1000" for 1kHz
-    t <freq>   -> triangle wave
-    w <freq>   -> sawtooth wave
-    q <freq>   -> square wave
-    a <0-255>  -> set amplitude (max DAC value used)
-*/
 
 #include "driver/dac.h"
 #include "driver/timer.h"
@@ -123,4 +107,24 @@ void loop() {
         break;
     }
   }
+
+
+  
+/*
+  ESP32 Function Generator (DAC-based)
+  -------------------------------------
+  Generates Sine / Triangle / Sawtooth / Square waves on GPIO25 (DAC1).
+  Output range: 0 - 3.3V (8-bit DAC, 0-255).
+
+  Good for testing your ESP32 CRO project - connect DAC output (GPIO25)
+  through a small series resistor to the ADC input (GPIO34) of the
+  oscilloscope ESP32, or straight to a real scope.
+
+  Control via Serial Monitor commands:
+    s <freq>   -> sine wave, e.g. "s 1000" for 1kHz
+    t <freq>   -> triangle wave
+    w <freq>   -> sawtooth wave
+    q <freq>   -> square wave
+    a <0-255>  -> set amplitude (max DAC value used)
+*/
 }
