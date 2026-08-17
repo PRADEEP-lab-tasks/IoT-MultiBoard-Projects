@@ -1,20 +1,5 @@
 //created by Pradeep
 
-/*
-  ESP32 CRO with Web Server + Adjustable Controls
-  --------------------------------------------------
-  Live waveform viewer with on-page controls for:
-    - Time base (sample delay, like time/div)
-    - Voltage scale (volts/div, display only)
-    - Trigger level (visual line + simple trigger-on-rising-edge)
-    - Pause/Resume
-
-  1. Set WiFi SSID/password below
-  2. Upload, open Serial Monitor to get the IP
-  3. Open that IP in a browser
-
-  Signal: connect to GPIO34 (0-3.3V range only).
-*/
 
 #include <WiFi.h>
 #include <WebServer.h>
@@ -264,3 +249,20 @@ void setup() {
 void loop() {
   server.handleClient();
 }
+
+
+/*
+  ESP32 CRO with Web Server + Adjustable Controls
+  --------------------------------------------------
+  Live waveform viewer with on-page controls for:
+    - Time base (sample delay, like time/div)
+    - Voltage scale (volts/div, display only)
+    - Trigger level (visual line + simple trigger-on-rising-edge)
+    - Pause/Resume
+
+  1. Set WiFi SSID/password below
+  2. Upload, open Serial Monitor to get the IP
+  3. Open that IP in a browser
+
+  Signal: connect to GPIO34 (0-3.3V range only).
+*/
