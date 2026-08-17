@@ -3,6 +3,7 @@
 A simple **oscilloscope (CRO)** implementation using an ESP32 and a web interface.  
 This project allows you to view live waveforms from an analog input pin directly in your browser, with adjustable controls for time base, voltage scale, trigger level, and pause/resume.
 
+
 ---
 
 ## 🚀 Features
