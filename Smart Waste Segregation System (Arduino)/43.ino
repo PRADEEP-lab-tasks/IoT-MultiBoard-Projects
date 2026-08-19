@@ -37,7 +37,7 @@ delayMicroseconds(10);
 digitalWrite(trigPin, LOW);
 delayMicroseconds(10);
 duration = pulseIn(echoPin, HIGH);
-distance= duration*0.034/2+distance;
+distance= duration*0.033/2+distance;
 delay(10);
 
   }
