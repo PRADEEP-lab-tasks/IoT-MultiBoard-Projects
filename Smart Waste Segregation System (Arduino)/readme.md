@@ -18,7 +18,6 @@ The system detects the presence of waste using an ultrasonic sensor, measures it
 ## 🛠️ Hardware Requirements
 - Arduino Uno / Nano / Mega
 - Ultrasonic Sensor (HC-SR04)
-- Soil Moisture Sensor
 - Servo Motor (SG90 or similar)
 - Jumper wires
 - Breadboard
