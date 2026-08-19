@@ -24,7 +24,7 @@ This project allows you to view live waveforms from an analog input pin directly
 ## 🛠 Hardware Requirements
 - **ESP32 board** (with WiFi capability).
 - Signal input connected to **GPIO34** (ADC pin).
-  - Voltage range: **0–3.3V only** (do not exceed).
+- Voltage range: **0–3.3V only** (do not exceed).
 - USB cable for programming and power.
 
 ---
