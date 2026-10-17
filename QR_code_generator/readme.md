@@ -1,3 +1,5 @@
+Created by pradeeep
+
 QR Code Generator using ESP32 and 3.5" TFT Display
 
 A simple and interactive QR Code Generator built with ESP32 and a 3.5-inch TFT Touch Display. This project allows users to generate and display QR codes directly on the TFT screen from custom text, URLs, Wi-Fi credentials, contact information, and other supported data formats.
