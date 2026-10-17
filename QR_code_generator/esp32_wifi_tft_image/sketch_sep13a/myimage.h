@@ -1,4 +1,5 @@
-// QR code image, 300x300, RGB565 format
+// QR code image, 300x300, RGB565 format the below data is each pixel representation
+
 #ifndef QR_IMAGE_H
 #define QR_IMAGE_H
 
