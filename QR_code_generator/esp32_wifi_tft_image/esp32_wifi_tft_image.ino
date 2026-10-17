@@ -1,4 +1,7 @@
 /*
+
+check with proper driver in ur tft and use
+
   ESP32 + 3.5" SPI TFT (ILI9488/ILI9486, 480x320) — WiFi Image Display
   ---------------------------------------------------------------------
   Open the ESP32's IP address in your phone's browser, pick a JPEG
