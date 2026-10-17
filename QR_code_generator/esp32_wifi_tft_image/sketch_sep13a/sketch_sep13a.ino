@@ -1,3 +1,5 @@
+//this code only shows an one image that u want to use
+
 #include <TFT_eSPI.h>
 #include <SPI.h>
 #include "myimage.h"
